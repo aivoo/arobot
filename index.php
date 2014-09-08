@@ -88,7 +88,7 @@
 	} else {
 		echo "Select Succeed1.1<br />";
 		while ($row = mysql_fetch_assoc($ret)) {
-			echo "{$row['id']}{$row['name']}<br />";
+			echo "{$row['name']}<br />";
 		}
 	}
 
@@ -100,7 +100,7 @@
 	} else {
 		echo "Select Succeed1.2<br />";
 		while ($row = mysql_fetch_assoc($ret)) {
-			echo "{$row['id']}{$row['name']}<br />";
+			echo "{$row['name']}<br />";
 		}
 	}
 
