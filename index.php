@@ -87,11 +87,8 @@
 		die("Select Failed1.1: " . mysql_error($link));
 	} else {
 		echo "Select Succeed1.1<br />";
-		$row = mysql_fetch_assoc($ret);
-		if($row['name'] != ''){
-			echo "1.1a";
-		}else{
-			echo "1.1b";
+		while ($row = mysql_fetch_assoc($ret)) {
+			echo "{$row['id']}{$row['name']}<br />";
 		}
 	}
 
@@ -102,11 +99,8 @@
 		die("Select Failed1.2: " . mysql_error($link));
 	} else {
 		echo "Select Succeed1.2<br />";
-		$row = mysql_fetch_assoc($ret);
-		if($row['name'] != ''){
-			echo "1.2a";
-		}else{
-			echo "1.2b";
+		while ($row = mysql_fetch_assoc($ret)) {
+			echo "{$row['id']}{$row['name']}<br />";
 		}
 	}
 
