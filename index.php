@@ -26,7 +26,7 @@
 	*/
 	
 	//创建一个数据库表
-	$sql = "create table if not exists test_mysql(
+/*	$sql = "create table if not exists test_mysql(
 			id int primary key auto_increment,
 			no int, 
 			name varchar(1024),
@@ -36,9 +36,9 @@
 		die("Create Table Failed: " . mysql_error($link));
 	} else {
 		echo "Create Table Succeed<br />";
-	}
+	}*/
 	
-	//插入数据
+/*	//插入数据
 	$sql = "insert into test_mysql(no, name) values(2007,'this is a test message'),
 			(2008,'this is another test message'),
 			(2009,'xxxxxxxxxxxxxx')";
@@ -47,19 +47,19 @@
 		die("Insert Failed: " . mysql_error($link));
 	} else {
 		echo "Insert Succeed<br />";
-	}
+	}*/
 	
-	//删除数据
+/*	//删除数据
 	$sql = "delete from test_mysql where no = 2008";
 	$ret = mysql_query($sql, $link);
 	if ($ret === false) {
 		die("Delete Failed: " . mysql_error($link));
 	} else {
 		echo "Delete  Succeed<br />";
-	}
+	}*/
 	
 	//修改数据
-	$sql = "update test_mysql set name = 'yyyyyy' where no = 2009";
+	$sql = "update test_mysql set name = concat(name,'10000') where id = 1";
 	$ret = mysql_query($sql, $link);
 	if ($ret === false) {
 		die("Update Failed: " . mysql_error($link));
@@ -69,17 +69,31 @@
 	
 	
 	//检索数据
-	$sql = "select id,no,name from test_mysql";
+	$sql = "select id,name from test_mysql";
 	$ret = mysql_query($sql, $link);
 	if ($ret === false) {
 		die("Select Failed: " . mysql_error($link));
 	} else {
 		echo "Select Succeed<br />";
 		while ($row = mysql_fetch_assoc($ret)) {
-			echo "{$row['id']} {$row['no']} {$row['name']}<br />";
+			echo "{$row['id']}{$row['name']}<br />";
 		}
 	}
 	
+	$zfca = "12345";
+	$sql = "select where name like %{$zfca}% from test_mysql";
+	$ret = mysql_query($sql, $link);
+	if ($ret === false) {
+		die("NO FUNDA: " . mysql_error($link));
+	} 
+
+	$zfcb = "11111";
+	$sql = "select where name like %{$zfcb}% from test_mysql";
+	$ret = mysql_query($sql, $link);
+	if ($ret === false) {
+		die("NO FUNDA: " . mysql_error($link));
+	} 
+
 /*	//删除表
 	$sql = "drop table if exists test_mysql";
 	$ret = mysql_query($sql, $link);
