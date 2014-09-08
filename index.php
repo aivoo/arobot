@@ -102,6 +102,9 @@
 		while ($row = mysql_fetch_assoc($ret)) {
 			echo "{$row['name']}<br />";
 		}
+			if ($row['name']=='') {
+				echo 'ANO1';
+			}
 	}
 
 /*	//删除表
