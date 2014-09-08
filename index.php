@@ -83,15 +83,15 @@
 	$zfca = "12345";
 	$sql = "select * from test_mysql where name like '%{$zfca}%'";
 	$ret = mysql_query($sql, $link);
-	if ($ret === false) {
-		die("NO FUNDA1.1: " . mysql_error($link));
+	if ($ret == '') {
+		echo 'A1.1';
 	} 
 
 	$zfcb = "11111";
 	$sql = "select * from test_mysql where name like '%{$zfcb}%'";
 	$ret = mysql_query($sql, $link);
-	if ($ret === false) {
-		die("NO FUNDA1.2: " . mysql_error($link));
+	if ($ret == '') {
+		echo 'A1.2';
 	} 
 
 /*	//删除表
