@@ -81,17 +81,17 @@
 	}
 	
 	$zfca = "12345";
-	$sql = "select where name like %{$zfca}% from test_mysql";
+	$sql = "select where name like '%{$zfca}%' from test_mysql";
 	$ret = mysql_query($sql, $link);
 	if ($ret === false) {
-		die("NO FUNDA: " . mysql_error($link));
+		die("NO FUNDA1.1: " . mysql_error($link));
 	} 
 
 	$zfcb = "11111";
-	$sql = "select where name like %{$zfcb}% from test_mysql";
+	$sql = "select where name like '%{$zfcb}%' from test_mysql";
 	$ret = mysql_query($sql, $link);
 	if ($ret === false) {
-		die("NO FUNDA: " . mysql_error($link));
+		die("NO FUNDA1.2: " . mysql_error($link));
 	} 
 
 /*	//删除表
