@@ -81,18 +81,28 @@
 	}
 	
 	$zfca = "12345";
-	$sql = "select * from test_mysql where name like '%{$zfca}%'";
+	$sql = "select name from test_mysql where name like '%{$zfca}%'";
 	$ret = mysql_query($sql, $link);
-	if ($ret == null) {
-		echo 'A1.1';
-	} 
+	if ($ret === false) {
+		die("Select Failed1.1: " . mysql_error($link));
+	} else {
+		echo "Select Succeed1.1<br />";
+		while ($row = mysql_fetch_assoc($ret)) {
+			echo "{$row['name']}<br />";
+		}
+	}
 
 	$zfcb = "1a11a11";
-	$sql = "select * from test_mysql where name like '%{$zfcb}%'";
+	$sql = "select name from test_mysql where name like '%{$zfcb}%'";
 	$ret = mysql_query($sql, $link);
-	if ($ret == null) {
-		echo 'A1.2';
-	} 
+	if ($ret === false) {
+		die("Select Failed1.2: " . mysql_error($link));
+	} else {
+		echo "Select Succeed1.2<br />";
+		while ($row = mysql_fetch_assoc($ret)) {
+			echo "{$row['name']}<br />";
+		}
+	}
 
 /*	//删除表
 	$sql = "drop table if exists test_mysql";
