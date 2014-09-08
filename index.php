@@ -80,14 +80,14 @@
 		}
 	}
 	
-	//删除表
+/*	//删除表
 	$sql = "drop table if exists test_mysql";
 	$ret = mysql_query($sql, $link);
 	if ($ret === false) {
 		die("Drop Table Failed: " . mysql_error($link));
 	} else {
 		echo "Drop Table Succeed<br />";
-	}
+	}*/
 
 
 ?>
