@@ -87,9 +87,12 @@
 		die("Select Failed1.1: " . mysql_error($link));
 	} else {
 		echo "Select Succeed1.1<br />";
-		while ($row = mysql_fetch_assoc($ret)) {
-			echo "{$row['name']}<br />";
-		}
+		$row = mysql_fetch_assoc($ret))
+			if(("{$row['name']}")!=''){
+				echo 'AYES1.1';
+			}else{
+				echo 'ANO1.1';
+			}
 	}
 
 	$zfcb = "1a11a11";
@@ -99,9 +102,12 @@
 		die("Select Failed1.2: " . mysql_error($link));
 	} else {
 		echo "Select Succeed1.2<br />";
-		while ($row = mysql_fetch_assoc($ret)) {
-			echo "{$row['name']}<br />";
-		}
+		$row = mysql_fetch_assoc($ret))
+			if(("{$row['name']}")!=''){
+				echo 'AYES1.2';
+			}else{
+				echo 'ANO1.2';
+			}
 	}
 
 /*	//删除表
