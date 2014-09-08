@@ -83,14 +83,14 @@
 	$zfca = "12345";
 	$sql = "select * from test_mysql where name like '%{$zfca}%'";
 	$ret = mysql_query($sql, $link);
-	if ($ret == '') {
+	if ($ret == null) {
 		echo 'A1.1';
 	} 
 
-	$zfcb = "11111";
+	$zfcb = "1a11a11";
 	$sql = "select * from test_mysql where name like '%{$zfcb}%'";
 	$ret = mysql_query($sql, $link);
-	if ($ret == '') {
+	if ($ret == null) {
 		echo 'A1.2';
 	} 
 
